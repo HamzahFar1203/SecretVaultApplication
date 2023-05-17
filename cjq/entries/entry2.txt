@@ -1,0 +1,5 @@
+<h1>5/17/2023</h1>
+<p>Hi, this is current me. As you can see, the date has changed to a more recent one, that's because I'm writing this note on that date. Anyway, be patient with this project as I am still learning, so major changes may not happen rapidly.
+<br>
+<br>
+By the way, nothing you see is finalized, this is a VERY early version of the web app. Almost everything might change, both in the UI, and in the code.</p>

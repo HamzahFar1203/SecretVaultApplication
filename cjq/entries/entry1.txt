@@ -1,0 +1,2 @@
+<h1>10/17/2020</h1>
+<p> This is the first entry, I created this entry on the date shown on the title of this note. I started working on this web app a year or so before that date, however, I stopped working on it due to a lack of motivation and because I started to feel like I wasn't "good enough", or "smart enough", to code. Several years later (I can't believe it took me this long), In the year 2023, I finally changed my mindset, and I am now going to try and slowly finish what I started.</p>
