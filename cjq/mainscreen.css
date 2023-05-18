@@ -1,0 +1,100 @@
+html, body {
+    width: 100vw;
+    max-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #1d182c;
+}
+
+main {
+    display: grid;
+    grid-template-rows: 10vh 10vh 10vh 10vh 10vh 10vh 10vh 10vh 10vh 10vh;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* NAV BAR CONTENT */
+nav {
+    display: flex;
+    position: fixed;
+    width:100vw;
+    height: 50px;
+    align-items: center;
+    background-color: #1e1736;
+    box-shadow: 0px 5px 15px black;
+    z-index: 1;
+}
+nav li {
+    display: inline;
+    height: 100%;
+}
+nav ul li a {
+    position: relative;
+    text-decoration: none;
+    /* line-height: 4.2; */
+    padding:15px 10px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #f2eecb;
+    background-color: #1e1736;
+}
+
+nav ul li a:hover {
+    background-color: #18122b;
+    border-bottom: 1px solid;
+}
+
+/* MAIN SCREEN CONTENT */
+#main_screen {
+    display: none;
+    grid-row: 1/11;
+    overflow-y: scroll;
+    color: rgb(255, 255, 255);
+}
+
+section {
+    position: relative;
+    width: 50%;
+    margin: auto;
+    margin-top: 5rem;
+    margin-bottom: 1em;
+    z-index: 0;
+}
+
+article {
+    position: relative;
+    text-align: left;
+
+    color: black;
+    background-color: #f2eecb;
+
+    margin-top: 1em;
+    padding: 5px 15px; /* Add 5px padding to the top and bottom, and 15px padding to the right and left, of all article elements */
+
+    box-shadow: 0px 10px 10px black;
+}
+
+article p {
+    font-family: 'Dancing Script', cursive;
+    font-size: 25px;
+}
+
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 1600px) {
+    section {
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    section {
+        width: 65%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    section {
+        width: 80%;
+    }
+}
