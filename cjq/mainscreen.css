@@ -32,7 +32,6 @@ nav li {
 nav ul li a {
     position: relative;
     text-decoration: none;
-    /* line-height: 4.2; */
     padding:15px 10px;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: #f2eecb;
@@ -67,16 +66,21 @@ article {
 
     color: black;
     background-color: #f2eecb;
+    border-radius: 5px;
 
     margin-top: 1em;
-    padding: 5px 15px; /* Add 5px padding to the top and bottom, and 15px padding to the right and left, of all article elements */
+    padding: 5px 15px;
 
     box-shadow: 0px 10px 10px black;
 }
 
+article h1 {
+    font-family: 'Jost', sans-serif;
+}
+
 article p {
-    font-family: 'Dancing Script', cursive;
-    font-size: 25px;
+    font-family: 'Jost', sans-serif;
+    font-size: 22px;
 }
 
 
