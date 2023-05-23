@@ -36,6 +36,7 @@ $(function () {
             document.getElementById("pwc_info_snippet").textContent = "You can't have ' ' for a password -_-";
         } else {
             localStorage.setItem("password", document.querySelector("input").value);
+            localStorage.setItem("status", "checked");
 
             document.getElementById("pwc_screen_text").textContent = "GREAT, LET'S GO BACK!";
             document.getElementById("pwc_info_snippet").style.color = "grey";

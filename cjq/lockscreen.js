@@ -1,8 +1,5 @@
 "use strict";
 $(function () {
-    
-    // Creating password storage
-    localStorage.setItem("password", "");
 
     $("#lockscreen").fadeIn(500);
 
@@ -30,10 +27,7 @@ $(function () {
         INFO SNIPPET CHANGER
     */
     window.setInterval(function () {
-        if (localStorage.getItem("password") == "" || localStorage.getItem("password") == " ") {
-            document.getElementById("info_snippet").textContent = "You need to set a password before trying to enter it. Click the 'Set Password' button below to set your password.";
-            $("a").fadeIn(300);
-        } else {
+        if (localStorage.getItem("status") == "checked") {
             document.getElementById("info_snippet").textContent = "It looks like you have a password. Just enter it in the field above and I'll send you to the main page!";
             document.querySelector("a").style.display = "none";
         }
