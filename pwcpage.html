@@ -6,22 +6,20 @@
         <meta name="description" content="A Secret vault of notes & other things you may want to keep a secret.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" href="https://th.bing.com/th/id/OIP.9z-toMeLsxLPW13b7OnD9wHaFk?w=256&h=192&c=7&r=0&o=5&dpr=1.25&pid=1.7">
-        <link rel="stylesheet" href="./cjq/lockscreen.css">
+        <link rel="stylesheet" href="./cjq/pwc.css">
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="./cjq/lockscreen.js" defer></script>
+        <script src="./cjq/pwc.js" defer></script>
     </head>
     <body>
         <main>
-            <div id="lockscreen">
-                <h1 id="lockscreen_text"></h1>
-                <input type="text" id="lockscreen_field" name="password">
+            <div id="pwc_screen">
+                <h1 id="pwc_screen_text"></h1>
+                <input type="text" id="pwc_screen_field" name="password">
                 <br>
-                <p id="info_snippet">You need to set a password before trying to enter it. If you enter the
-                    correct password, it will automatically take you to the main page,
-                    you will not need to press Enter or any other button.
-                </p>
-                <a>Set Password</a>
+                <button id="pwcbutton" onclick="PasswordSetter()">Done.</button>
+
+                <p id="pwc_info_snippet" style="font-size: 10px; margin: 30px; color:grey;">Make yourself a password. Anything works.</p>
             </div>
         </main>
     </body>

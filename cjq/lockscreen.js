@@ -1,5 +1,8 @@
 "use strict";
 $(function () {
+
+    $("#lockscreen").fadeIn(500);
+
     let lock_screen = document.getElementById("lockscreen");
 
     let welcomeText = ["HELLO", "HOW ARE YOU DOING?", "ARE YOU HAVING A GOOD DAY?", "I HOPE YOU ARE!", "HOW IS THE WEATHER?", 
@@ -8,32 +11,59 @@ $(function () {
                     "I'D RATHER NOT.", "THIS LITTLE SYSTEM HAS BEEN MY SAFE HAVEN", "I LIKE IT HERE.", "IT'S QUIET", "AND PEACEFUL.",
                     "ANYWAY, I'LL LEAVE YOU ALONE FOR A SECOND", "BYE."];
 
-    function lockScreen () {
-        let i = 0;
-        lock_screen.firstElementChild.textContent = welcomeText[i];
-        var textChangerInterval = window.setInterval(function() {
-                i++;
-                if (i > welcomeText.length) {
-                    i = 0;
-                    lock_screen.firstElementChild.textContent = welcomeText[i];
-                } else {
-                    lock_screen.firstElementChild.textContent = welcomeText[i];
-                }
-        }, 7000);
-
-        var lockscreenDisablerInterval = window.setInterval(function() {
-            if (document.getElementById("lockscreen_field").value == "xmplpsswd") {
-                $("#lockscreen").hide(300);
-                // lock_screen.style.display = "none";
-                window.location.href = "./system.html";
-                // $("#main_screen").fadeIn(2000);
-                // mainScreen();
-                // main_screen.style.display = "block";
-                clearInterval(lockscreenDisablerInterval);
-                clearInterval(textChangerInterval);
-            }
-        }, 60);
+    if (localStorage.getItem("state") == "checked") {
+        document.querySelector("a").style.display = "none";
     }
 
-    lockScreen();
+    let i = 0;
+    lock_screen.firstElementChild.textContent = welcomeText[i];
+    var textChangerInterval = window.setInterval(function() {
+        i++;
+        if (i > welcomeText.length) {
+            i = 0;
+            lock_screen.firstElementChild.textContent = welcomeText[i];
+        } else {
+            lock_screen.firstElementChild.textContent = welcomeText[i];
+        }
+    }, 7000);
+
+
+    /*
+        INFO SNIPPET CHANGER
+    */
+    window.setInterval(function () {
+        if (localStorage.getItem("password") !== "") {
+            document.getElementById("info_snippet").textContent = "It looks like you have a password. Just enter it in the field above and I'll send you to the main page!";
+        } else {
+            document.getElementById("info_snippet").textContent = "You need to set a password before trying to enter it. Click the 'Set Password' button below to set your password.";
+        }
+    }, 60);
+
+    /*
+        PASSWORD VERIFICATION/GETTER
+        The following interval continuously checks whether the password stored in the users
+        local storage matches the value in the input field. IF the stored password and the user 
+        input match,THEN the Interval resets the input field to an empty state, triggers a fadeOut 
+        animation on the "lockscreen" div, and sends the user to the main page.
+    */
+    var lockscreenDisablerInterval = window.setInterval(function() {
+        // Checks if the users password matches the one stored in localStorage
+        if (localStorage.getItem("password") !== "" && document.getElementById("lockscreen_field").value == localStorage.getItem("password")) {
+            document.querySelector("input").value = "";
+            clearInterval(lockscreenDisablerInterval);
+            clearInterval(textChangerInterval);
+            $("#lockscreen").fadeOut(300);
+            window.setTimeout(function () {
+                window.location.href = "../system.html";
+            }, 300);
+        }
+    }, 60);
+
+    document.querySelector("a").addEventListener("click", function () {
+        $("#lockscreen").fadeOut(500);
+        window.setTimeout(function () {
+            window.location.href = "../pwcpage.html"
+        }, 500);
+    });
+
 });

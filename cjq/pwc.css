@@ -15,16 +15,16 @@ main {
 }
 
 /* LOCKSCREEN CONTENT */
-#lockscreen {
+#pwc_screen {
     display: none;
     grid-row: 4/6;
     text-align: center;
-    padding: 0px 20px;
     color: rgb(255, 255, 255);
+    padding: 0px 20px;
     font-family:"titillium_webregular", Arial, sans-serif;
 }
 
-#lockscreen_field {
+#pwc_screen_field {
     position: relative;
     text-align: center;
 
@@ -43,17 +43,13 @@ main {
     transition:border 500ms;
 }
 
-#lockscreen_field:hover, #lockscreen_field:focus {
+#pwc_screen_field:hover, #pwc_screen_field:focus {
     border-bottom:3px solid white;
 }
 
-#lockscreen p {
-    font-size: 10px; 
-    margin: 30px 40%;
-    color:grey;
-}
-
-a {
+button {
+    position: relative;
+    top: 15px;
     padding: 5px 15px;
     background-color: grey;
     color: aliceblue;
@@ -66,13 +62,13 @@ a {
     /* border: 1px solid white; */
 }
 
-a:hover {
+button:hover {
     cursor:pointer;
     background-color: white;
     color: black;
 }
 
-a:active {
+button:active {
     background-color: rgb(168, 168, 168);
 }
 
@@ -85,7 +81,6 @@ a:active {
 @media only screen and (max-width: 877px) {
     #lockscreen p {
         margin: 25px 31%;
-        font-size: xx-small;
     }
 }
 
@@ -96,11 +91,7 @@ a:active {
 }
 
 @media only screen and (max-width: 500px) {
-    #lockscreen p {
-        margin: 25px 15%;
-    }
-
-    #lockscreen h1 {
+    #pwc_screen h1 {
         font-size: 25px;
     }
 }
