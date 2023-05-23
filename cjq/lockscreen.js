@@ -11,10 +11,6 @@ $(function () {
                     "I'D RATHER NOT.", "THIS LITTLE SYSTEM HAS BEEN MY SAFE HAVEN", "I LIKE IT HERE.", "IT'S QUIET", "AND PEACEFUL.",
                     "ANYWAY, I'LL LEAVE YOU ALONE FOR A SECOND", "BYE."];
 
-    if (localStorage.getItem("state") == "checked") {
-        document.querySelector("a").style.display = "none";
-    }
-
     let i = 0;
     lock_screen.firstElementChild.textContent = welcomeText[i];
     var textChangerInterval = window.setInterval(function() {
@@ -27,15 +23,16 @@ $(function () {
         }
     }, 7000);
 
-
     /*
         INFO SNIPPET CHANGER
     */
     window.setInterval(function () {
-        if (localStorage.getItem("password") !== "") {
-            document.getElementById("info_snippet").textContent = "It looks like you have a password. Just enter it in the field above and I'll send you to the main page!";
-        } else {
+        if (localStorage.getItem("password") == "" || localStorage.getItem("password") == " ") {
             document.getElementById("info_snippet").textContent = "You need to set a password before trying to enter it. Click the 'Set Password' button below to set your password.";
+            $("a").fadeIn(300);
+        } else {
+            document.getElementById("info_snippet").textContent = "It looks like you have a password. Just enter it in the field above and I'll send you to the main page!";
+            document.querySelector("a").style.display = "none";
         }
     }, 60);
 
@@ -54,7 +51,7 @@ $(function () {
             clearInterval(textChangerInterval);
             $("#lockscreen").fadeOut(300);
             window.setTimeout(function () {
-                window.location.href = "../system.html";
+                window.location.href = "./system.html";
             }, 300);
         }
     }, 60);
@@ -62,7 +59,7 @@ $(function () {
     document.querySelector("a").addEventListener("click", function () {
         $("#lockscreen").fadeOut(500);
         window.setTimeout(function () {
-            window.location.href = "../pwcpage.html"
+            window.location.href = "./pwcpage.html"
         }, 500);
     });
 

@@ -5,8 +5,9 @@ $(function () {
 
     let pwcPage = document.getElementById("pwc_screen");
 
-    let welcomeText = ["HI", "MAKE A PASSWORD!", "IT'LL BE YOUR OWN SECRET PASSWORD",
-                        "MAKE IT SOMETHING FANCY", "IF YOU WANT..", "BECAUSE YOU WON'T BE ABLE TO CHANGE IT LATER."];
+    let welcomeText = ["MAKE A PASSWORD", "IT'LL BE YOUR OWN SECRET PASSWORD",
+                       "MAKE IT SOMETHING FANCY", "IF YOU WANT..", "BECAUSE YOU WON'T BE ABLE TO CHANGE IT LATER.",
+                       "AT LEAST FOR NOW."];
 
     function TextDisplay () {
         let i = 0;
@@ -35,7 +36,6 @@ $(function () {
             document.getElementById("pwc_info_snippet").textContent = "You can't have ' ' for a password -_-";
         } else {
             localStorage.setItem("password", document.querySelector("input").value);
-            localStorage.setItem("state", "checked");
 
             document.getElementById("pwc_screen_text").textContent = "GREAT, LET'S GO BACK!";
             document.getElementById("pwc_info_snippet").style.color = "grey";
@@ -46,7 +46,7 @@ $(function () {
             }, 1000);
 
             window.setTimeout(function () {
-                window.location.href = "../index.html";
+                window.location.href = "./index.html";
             }, 1700);
         }
     });
