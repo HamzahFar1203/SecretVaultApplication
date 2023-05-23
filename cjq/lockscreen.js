@@ -1,5 +1,8 @@
 "use strict";
 $(function () {
+    
+    // Creating password storage
+    localStorage.setItem("password", "");
 
     $("#lockscreen").fadeIn(500);
 
